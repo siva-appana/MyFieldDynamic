@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyField</title>
+    {% load static %}
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Full-screen video background */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Centered content on the video background */
+        .content {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin: 0;
+        }
+
+        /* About section style */
+        .about {
+            height: 100vh;
+            background-color: #f4f4f4;
+            padding: 50px;
+            text-align: center;
+            position: relative;
+            z-index: 0; 
+        }
+
+        .about h2 {
+            font-size: 3em;
+            color: #333;
+        }
+
+        .about p {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Scrolling */
+        body {
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop class="video-background">
+        <source src="{% static 'main/sample_farm_video.mp4' %}" type="video/mp4">
+        The video does not work on your device.
+    </video>
+
+    <div class="content">
+        <h1>MyField</h1>
+        <p>No one can count fruits like we do!</p>
+    </div>
+
+    <div class="about">
+        <h2>About MyField</h2>
+        <p>
+            An engineering senior design team from Georgia Tech hoping to make a splash in agriculture. 
+        </p>
+    </div>
+</body>
+</html>
